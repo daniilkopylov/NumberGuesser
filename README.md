@@ -7,7 +7,7 @@
 ```mermaid
 graph TD
     A([НАЧАЛО]) --> B[Генерация targetNumber от 1 до 100<br>Установка maxAttempts = 7, attemptsUsed = 0]
-    B --> C{attemptsUsed < maxAttempts?}
+    B --> C{attemptsUsed &lt; maxAttempts?}
     
     C -- Нет --> D[/Вывод: Игра окончена, попытки исчерпаны. Показ targetNumber/]
     D --> E([КОНЕЦ])
@@ -32,14 +32,14 @@ graph TD
     O -- Да --> P[/Вывод точечного сообщения об ошибке/]
     P --> C
     
-    O -- Нет --> Q[Безопасное приведение: userGuess = (int) accumulatedNumber]
+    O -- Нет --> Q[Безопасное приведение: userGuess = &lpar;int&rpar; accumulatedNumber]
     Q --> R[Увеличение счетчика: attemptsUsed++]
     
     R --> S{userGuess == targetNumber?}
     S -- Да --> T[/Вывод: Победа! Поздравление с указанием числа попыток/]
     T --> E
     
-    S -- Нет --> U{userGuess < targetNumber?}
+    S -- Нет --> U{userGuess &lt; targetNumber?}
     U -- Да --> V[/Вывод подсказки: Моё число БОЛЬШЕ/]
     V --> C
     U -- Нет --> W[/Вывод подсказки: Моё число МЕНЬШЕ/]
